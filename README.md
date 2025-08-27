@@ -1,6 +1,6 @@
 # Bharat Address Validator (CLI)
 
-CLI to validate CSV or GeoJSON against the Bharat Address schema and run basic QC rules.
+CLI to validate CSV or GeoJSON against the Bharat Address schema (JSON Schema draft 2020-12) and run basic QC rules.
 
 Usage:
 

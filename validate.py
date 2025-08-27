@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 import click
-from jsonschema import Draft7Validator
+from jsonschema import Draft202012Validator
 
 
 @click.command()
@@ -14,7 +14,7 @@ def main(input_path: Path, schema_path: Path):
     """Validate a GeoJSON FeatureCollection of address features against the schema."""
     with schema_path.open() as f:
         schema = json.load(f)
-    validator = Draft7Validator(schema)
+    validator = Draft202012Validator(schema)
 
     with input_path.open() as f:
         data = json.load(f)
