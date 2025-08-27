@@ -1,0 +1,19 @@
+name: Validate data and spec
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'specs/**'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r tools-validator/requirements.txt || pip install -r requirements.txt
+      - run: |
+          if [ -f tools-validator/validate.py ]; then python tools-validator/validate.py data/sample.geojson --schema specs/address-register.schema.json; else python validate.py data/sample.geojson --schema specs/address-register.schema.json; fi
+      - run: |
+          if [ -f tools-validator/check_qc.py ]; then python tools-validator/check_qc.py data/sample.geojson; else python check_qc.py data/sample.geojson; fi

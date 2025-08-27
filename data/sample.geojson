@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ulb_lgd": "294690",
+        "street_id": "IN12M",
+        "street_name": "Indira Nagar 12th Main",
+        "house_number": "16B",
+        "locality": "HAL 3rd Stage",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pin": "560008",
+        "primary_digipin": "ABC-DEF-1234",
+        "quality": "MunicipalityVerified"
+      },
+      "geometry": {"type": "Point", "coordinates": [77.651, 12.963]}
+    }
+  ]
+}

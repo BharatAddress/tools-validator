@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bharat Address Register: Minimal Feature",
+  "type": "object",
+  "required": [
+    "ulb_lgd", "street_name", "house_number", "locality", "city", "state",
+    "pin", "primary_digipin", "geometry"
+  ],
+  "properties": {
+    "ulb_lgd": {"type": "string", "description": "ULB LGD code"},
+    "ward_id": {"type": "string"},
+    "street_id": {"type": "string"},
+    "street_name": {"type": "string"},
+    "street_type": {"type": "string"},
+    "house_number": {"type": "string"},
+    "house_number_suffix": {"type": "string"},
+    "building_name": {"type": "string"},
+    "subaddress_type": {"type": "string", "enum": ["Flat", "Unit", "Shop", "Floor", "Room", ""]},
+    "subaddress_id": {"type": "string"},
+    "locality": {"type": "string"},
+    "city": {"type": "string"},
+    "state": {"type": "string"},
+    "pin": {"type": "string", "pattern": "^[1-9][0-9]{5}$"},
+    "primary_digipin": {"type": "string", "description": "Entrance gate or lobby cell DIGIPIN"},
+    "secondary_digipin": {"type": "string", "description": "Service or fire access DIGIPIN if relevant"},
+    "ulpin": {"type": "string", "description": "Optional parcel linkage"},
+    "entrance_point_source": {"type": "string", "enum": ["survey", "imagery", "crowd", "post"]},
+    "quality": {"type": "string", "enum": ["MunicipalityVerified", "GeoVerified", "CrowdPending"]},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "geometry": {
+      "type": "object",
+      "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"const": "Point"},
+        "coordinates": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+      }
+    },
+    "last_updated": {"type": "string", "format": "date-time"}
+  }
+}

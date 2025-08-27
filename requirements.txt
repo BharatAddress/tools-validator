@@ -1,0 +1,2 @@
+jsonschema==4.22.0
+click==8.1.7
