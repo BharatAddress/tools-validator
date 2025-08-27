@@ -1,3 +1,6 @@
+![CI](https://github.com/BharatAddress/tools-validator/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/BharatAddress/tools-validator/actions/workflows/codeql.yml/badge.svg)
+
 # Bharat Address Validator (CLI)
 
 CLI to validate CSV or GeoJSON against the Bharat Address schema (JSON Schema draft 2020-12) and run basic QC rules.
