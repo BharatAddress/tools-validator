@@ -1,5 +1,6 @@
 from pathlib import Path
 import subprocess
+import sys
 
 
 def test_validate_collection_ok(tmp_path: Path):
@@ -7,7 +8,7 @@ def test_validate_collection_ok(tmp_path: Path):
     data = repo_root / "data" / "sample.geojson"
     schema = repo_root / "specs" / "address-register.schema.json"
     result = subprocess.run([
-        "python",
+        sys.executable,
         str(repo_root / "validate.py"),
         str(data),
         "--schema",
