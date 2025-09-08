@@ -18,3 +18,7 @@ python check_qc.py data/sample.geojson
 Notes:
 - The authoritative schema lives in the `specs` repo; this repo includes a synced copy for CI examples.
 - The validator supports 3 targets via `--schema-target`: `collection`, `feature`, or `properties`.
+
+## Contributor Guide
+
+- Central guidelines: https://github.com/BharatAddress/.github/blob/main/AGENTS.md
